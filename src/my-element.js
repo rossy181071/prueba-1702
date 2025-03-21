@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
-import litLogo from './assets/lit.svg'
-import viteLogo from '/vite.svg'
+import { Child1Element } from './child-1-element'
+
 
 /**
  * An example element.
@@ -12,11 +12,6 @@ export class MyElement extends LitElement {
   static get properties() {
     return {
       /**
-       * Copy for the read the docs hint.
-       */
-      docsHint: { type: String },
-
-      /**
        * The number of times the button has been clicked.
        */
       count: { type: Number },
@@ -25,33 +20,24 @@ export class MyElement extends LitElement {
 
   constructor() {
     super()
-    this.docsHint = 'Click on the Vite and Lit logos to learn more'
+    
     this.count = 0
   }
 
   render() {
     return html`
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
-        </a>
-      </div>
-      <slot></slot>
+      
       <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
+      <h1> 
+      count is ${this.count}
+  </h1>
+  <child-1-element></child-1-element>
       </div>
-      <p class="read-the-docs">${this.docsHint}</p>
+
     `
   }
 
-  _onClick() {
-    this.count++
-  }
+ 
 
   static get styles() {
     return css`
